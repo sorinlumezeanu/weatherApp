@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		FF0CC94D1E9EAE8E00D9CA18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CC94C1E9EAE8E00D9CA18 /* AppDelegate.swift */; };
-		FF0CC94F1E9EAE8E00D9CA18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CC94E1E9EAE8E00D9CA18 /* ViewController.swift */; };
 		FF0CC9521E9EAE8E00D9CA18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0CC9501E9EAE8E00D9CA18 /* Main.storyboard */; };
 		FF0CC9551E9EAE8E00D9CA18 /* WeatherApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF0CC9531E9EAE8E00D9CA18 /* WeatherApp.xcdatamodeld */; };
 		FF0CC9571E9EAE8E00D9CA18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF0CC9561E9EAE8E00D9CA18 /* Assets.xcassets */; };
 		FF0CC95A1E9EAE8E00D9CA18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0CC9581E9EAE8E00D9CA18 /* LaunchScreen.storyboard */; };
 		FF0CC9651E9EAE8F00D9CA18 /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CC9641E9EAE8F00D9CA18 /* WeatherAppTests.swift */; };
 		FF0CC9701E9EAE8F00D9CA18 /* WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CC96F1E9EAE8F00D9CA18 /* WeatherAppUITests.swift */; };
+		FF1E84401E9EBF18007DAFD0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1E843F1E9EBF18007DAFD0 /* MapKit.framework */; };
+		FF1E84421E9EC06E007DAFD0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1E84411E9EC06E007DAFD0 /* CoreLocation.framework */; };
+		FF1E84441E9EC159007DAFD0 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E84431E9EC159007DAFD0 /* MapVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,6 @@
 /* Begin PBXFileReference section */
 		FF0CC9491E9EAE8E00D9CA18 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF0CC94C1E9EAE8E00D9CA18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FF0CC94E1E9EAE8E00D9CA18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FF0CC9511E9EAE8E00D9CA18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF0CC9541E9EAE8E00D9CA18 /* WeatherApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherApp.xcdatamodel; sourceTree = "<group>"; };
 		FF0CC9561E9EAE8E00D9CA18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +50,9 @@
 		FF0CC96B1E9EAE8F00D9CA18 /* WeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF0CC96F1E9EAE8F00D9CA18 /* WeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITests.swift; sourceTree = "<group>"; };
 		FF0CC9711E9EAE8F00D9CA18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF1E843F1E9EBF18007DAFD0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FF1E84411E9EC06E007DAFD0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FF1E84431E9EC159007DAFD0 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF1E84421E9EC06E007DAFD0 /* CoreLocation.framework in Frameworks */,
+				FF1E84401E9EBF18007DAFD0 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +89,7 @@
 				FF0CC9631E9EAE8F00D9CA18 /* WeatherAppTests */,
 				FF0CC96E1E9EAE8F00D9CA18 /* WeatherAppUITests */,
 				FF0CC94A1E9EAE8E00D9CA18 /* Products */,
+				FF1E843E1E9EBF18007DAFD0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +131,30 @@
 			path = WeatherAppUITests;
 			sourceTree = "<group>";
 		};
+		FF1E843C1E9EBC69007DAFD0 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				FF1E84431E9EC159007DAFD0 /* MapVC.swift */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		FF1E843D1E9EBC75007DAFD0 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
+		FF1E843E1E9EBF18007DAFD0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF1E84411E9EC06E007DAFD0 /* CoreLocation.framework */,
+				FF1E843F1E9EBF18007DAFD0 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FF7DB53A1E9EB205005827E9 /* Auxiliary */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,7 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				FF7DB53E1E9EB287005827E9 /* Storyboards */,
-				FF0CC94E1E9EAE8E00D9CA18 /* ViewController.swift */,
+				FF1E843D1E9EBC75007DAFD0 /* Weather */,
+				FF1E843C1E9EBC69007DAFD0 /* Map */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -238,6 +270,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = FJ44ATDR3A;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					FF0CC95F1E9EAE8F00D9CA18 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -306,7 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF0CC9551E9EAE8E00D9CA18 /* WeatherApp.xcdatamodeld in Sources */,
-				FF0CC94F1E9EAE8E00D9CA18 /* ViewController.swift in Sources */,
+				FF1E84441E9EC159007DAFD0 /* MapVC.swift in Sources */,
 				FF0CC94D1E9EAE8E00D9CA18 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
