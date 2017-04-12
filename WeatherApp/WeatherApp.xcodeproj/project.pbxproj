@@ -99,13 +99,9 @@
 		FF0CC94B1E9EAE8E00D9CA18 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				FF0CC94C1E9EAE8E00D9CA18 /* AppDelegate.swift */,
-				FF0CC94E1E9EAE8E00D9CA18 /* ViewController.swift */,
-				FF0CC9501E9EAE8E00D9CA18 /* Main.storyboard */,
-				FF0CC9561E9EAE8E00D9CA18 /* Assets.xcassets */,
-				FF0CC9581E9EAE8E00D9CA18 /* LaunchScreen.storyboard */,
-				FF0CC95B1E9EAE8F00D9CA18 /* Info.plist */,
-				FF0CC9531E9EAE8E00D9CA18 /* WeatherApp.xcdatamodeld */,
+				FF7DB53A1E9EB205005827E9 /* Auxiliary */,
+				FF7DB53B1E9EB217005827E9 /* UI */,
+				FF7DB53D1E9EB250005827E9 /* Model */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -126,6 +122,50 @@
 				FF0CC9711E9EAE8F00D9CA18 /* Info.plist */,
 			);
 			path = WeatherAppUITests;
+			sourceTree = "<group>";
+		};
+		FF7DB53A1E9EB205005827E9 /* Auxiliary */ = {
+			isa = PBXGroup;
+			children = (
+				FF7DB53C1E9EB235005827E9 /* Resources */,
+				FF0CC94C1E9EAE8E00D9CA18 /* AppDelegate.swift */,
+				FF0CC95B1E9EAE8F00D9CA18 /* Info.plist */,
+			);
+			name = Auxiliary;
+			sourceTree = "<group>";
+		};
+		FF7DB53B1E9EB217005827E9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FF7DB53E1E9EB287005827E9 /* Storyboards */,
+				FF0CC94E1E9EAE8E00D9CA18 /* ViewController.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		FF7DB53C1E9EB235005827E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FF0CC9561E9EAE8E00D9CA18 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FF7DB53D1E9EB250005827E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF0CC9531E9EAE8E00D9CA18 /* WeatherApp.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FF7DB53E1E9EB287005827E9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FF0CC9501E9EAE8E00D9CA18 /* Main.storyboard */,
+				FF0CC9581E9EAE8E00D9CA18 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -518,6 +558,7 @@
 				FF0CC9761E9EAE8F00D9CA18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF0CC9771E9EAE8F00D9CA18 /* Build configuration list for PBXNativeTarget "WeatherAppTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +567,7 @@
 				FF0CC9791E9EAE8F00D9CA18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF0CC97A1E9EAE8F00D9CA18 /* Build configuration list for PBXNativeTarget "WeatherAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +576,7 @@
 				FF0CC97C1E9EAE8F00D9CA18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
