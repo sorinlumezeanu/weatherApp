@@ -11,7 +11,11 @@ import CoreLocation
 
 import UIKit
 
-class MapVC: UIViewController, CLLocationManagerDelegate {
+class MapVC: UIViewController, CLLocationManagerDelegate, UIGestureRecognizerDelegate {
+    
+    fileprivate struct Constants {
+        static let ShowWeatherDetailsSegueId = "ShowWeatherDetails"
+    }
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -35,5 +39,31 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
             self.mapView.showsUserLocation = true
         }
     }
+    
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier! {
+        case Constants.ShowWeatherDetailsSegueId:
+            break
+            
+        default:
+            break
+        }
+    }
+    
+    
+    // MARK: Tap Gesture Recognizer
+    
+    @IBAction func doubleTapped() {
+        self.performSegue(withIdentifier: Constants.ShowWeatherDetailsSegueId, sender: self)
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 }

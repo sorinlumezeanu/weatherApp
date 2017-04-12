@@ -17,6 +17,7 @@
 		FF1E84401E9EBF18007DAFD0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1E843F1E9EBF18007DAFD0 /* MapKit.framework */; };
 		FF1E84421E9EC06E007DAFD0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1E84411E9EC06E007DAFD0 /* CoreLocation.framework */; };
 		FF1E84441E9EC159007DAFD0 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E84431E9EC159007DAFD0 /* MapVC.swift */; };
+		FF1E84461E9ECAFF007DAFD0 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E84451E9ECAFF007DAFD0 /* WeatherVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		FF1E843F1E9EBF18007DAFD0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FF1E84411E9EC06E007DAFD0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FF1E84431E9EC159007DAFD0 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		FF1E84451E9ECAFF007DAFD0 /* WeatherVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		FF1E843D1E9EBC75007DAFD0 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				FF1E84451E9ECAFF007DAFD0 /* WeatherVC.swift */,
 			);
 			name = Weather;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				FF0CC9551E9EAE8E00D9CA18 /* WeatherApp.xcdatamodeld in Sources */,
 				FF1E84441E9EC159007DAFD0 /* MapVC.swift in Sources */,
 				FF0CC94D1E9EAE8E00D9CA18 /* AppDelegate.swift in Sources */,
+				FF1E84461E9ECAFF007DAFD0 /* WeatherVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
