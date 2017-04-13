@@ -39,6 +39,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gnJ-kT-Kie"/>
                     <connections>
+                        <outlet property="doubleTapGestureRecognizer" destination="BdC-gG-7sh" id="c86-Y5-a69"/>
                         <outlet property="mapView" destination="PC9-uC-dMs" id="ahy-If-Zmj"/>
                         <segue destination="pBf-r4-PQg" kind="show" identifier="ShowWeatherDetails" id="sXy-sT-Y8y"/>
                     </connections>
@@ -46,7 +47,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer numberOfTapsRequired="2" id="BdC-gG-7sh">
                     <connections>
-                        <action selector="doubleTapped" destination="BYZ-38-t0r" id="GOg-bj-k43"/>
+                        <action selector="doubleTappedWithSender:" destination="BYZ-38-t0r" id="8X5-Qg-WDS"/>
                         <outlet property="delegate" destination="BYZ-38-t0r" id="rDW-7i-KmX"/>
                     </connections>
                 </tapGestureRecognizer>

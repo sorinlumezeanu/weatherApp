@@ -11,13 +11,14 @@ import CoreLocation
 
 import UIKit
 
-class MapVC: UIViewController, CLLocationManagerDelegate, UIGestureRecognizerDelegate {
+class MapVC: UIViewController, CLLocationManagerDelegate, UIGestureRecognizerDelegate, WeatherVCDataSource {
     
     fileprivate struct Constants {
         static let ShowWeatherDetailsSegueId = "ShowWeatherDetails"
     }
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var doubleTapGestureRecognizer: UITapGestureRecognizer!
     
     let locationManager = CLLocationManager()
     
@@ -40,12 +41,19 @@ class MapVC: UIViewController, CLLocationManagerDelegate, UIGestureRecognizerDel
         }
     }
     
+    // MARK: WeatherVCDataSource
+    
+    var locationCoordinate: CLLocationCoordinate2D?
+    
+    
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier! {
         case Constants.ShowWeatherDetailsSegueId:
-            break
+            if let weatherVC = segue.destination as? WeatherVC {
+                weatherVC.datasource = self
+            }
             
         default:
             break
@@ -55,7 +63,14 @@ class MapVC: UIViewController, CLLocationManagerDelegate, UIGestureRecognizerDel
     
     // MARK: Tap Gesture Recognizer
     
-    @IBAction func doubleTapped() {
+    @IBAction func doubleTapped(sender: UITapGestureRecognizer?) {
+        guard let sender = sender else { return }
+        guard sender === self.doubleTapGestureRecognizer else { return }
+        
+        let touchLocation = sender.location(in: self.mapView)
+        let touchLocationCoordinate = self.mapView.convert(touchLocation, toCoordinateFrom: self.mapView)
+        self.locationCoordinate = touchLocationCoordinate
+        
         self.performSegue(withIdentifier: Constants.ShowWeatherDetailsSegueId, sender: self)
     }
     
