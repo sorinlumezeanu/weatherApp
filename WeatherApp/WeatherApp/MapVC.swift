@@ -11,7 +11,7 @@ import CoreLocation
 
 import UIKit
 
-class MapVC: UIViewController, CLLocationManagerDelegate, UIGestureRecognizerDelegate, WeatherVCDataSource {
+class MapVC: UIViewController, UIGestureRecognizerDelegate, WeatherVCDataSource {
     
     fileprivate struct Constants {
         static let ShowWeatherDetailsSegueId = "ShowWeatherDetails"
@@ -20,26 +20,36 @@ class MapVC: UIViewController, CLLocationManagerDelegate, UIGestureRecognizerDel
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var doubleTapGestureRecognizer: UITapGestureRecognizer!
     
-    let locationManager = CLLocationManager()
+    
+    // MARK: Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.startUpdatingLocation()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.locationDidChange(notification:)),
+                                               name: Notification.Name.locationChanged,
+                                               object: nil)
+        LocationService.shared.startUpdatingLocation()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            let span = MKCoordinateSpanMake(0.01, 0.01)
-            let userLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-            let region = MKCoordinateRegionMake(userLocation, span)
+    
+    // MARK: LocationService Notifications
+    
+    @objc private func locationDidChange(notification: NSNotification) {
+        if let location = LocationService.shared.currentLocation {
+            let locationCoordinate = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+            let coordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
+            let region = MKCoordinateRegionMake(locationCoordinate, coordinateSpan)
             self.mapView.setRegion(region, animated: true)
             self.mapView.showsUserLocation = true
         }
     }
+
     
     // MARK: WeatherVCDataSource
     
