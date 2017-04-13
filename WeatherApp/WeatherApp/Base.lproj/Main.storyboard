@@ -6,10 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MapVC-->
+        <!--Weather App-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapVC" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +38,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PC9-uC-dMs" secondAttribute="bottom" id="pdx-pJ-ju3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gnJ-kT-Kie"/>
+                    <navigationItem key="navigationItem" title="Weather App" id="gnJ-kT-Kie"/>
                     <connections>
                         <outlet property="doubleTapGestureRecognizer" destination="BdC-gG-7sh" id="c86-Y5-a69"/>
                         <outlet property="mapView" destination="PC9-uC-dMs" id="ahy-If-Zmj"/>
@@ -65,29 +66,43 @@
                         <sections>
                             <tableViewSection id="ZwJ-Nl-VeC">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LXl-yp-Ru0">
-                                        <rect key="frame" x="0.0" y="35" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="LXl-yp-Ru0">
+                                        <rect key="frame" x="0.0" y="35" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LXl-yp-Ru0" id="vsB-DB-PPp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsd-Uw-gld">
-                                                    <rect key="frame" x="128" y="11" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsd-Uw-gld" userLabel="Weather.main">
+                                                    <rect key="frame" x="8" y="8" width="359" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJe-ep-B8E" userLabel="Weather.description">
+                                                    <rect key="frame" x="8" y="16" width="359" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggc-yb-220" userLabel="Weather.coordinate">
+                                                    <rect key="frame" x="8" y="24" width="359" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FzC-9I-bpU">
-                                        <rect key="frame" x="0.0" y="79" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FzC-9I-bpU" id="x55-IT-Rzc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="jsd-Uw-gld" secondAttribute="trailing" id="Fcb-xl-TjA"/>
+                                                <constraint firstItem="QJe-ep-B8E" firstAttribute="leading" secondItem="jsd-Uw-gld" secondAttribute="leading" id="FeP-BO-m9T"/>
+                                                <constraint firstItem="ggc-yb-220" firstAttribute="width" secondItem="QJe-ep-B8E" secondAttribute="width" id="NDb-e2-Qa7"/>
+                                                <constraint firstItem="ggc-yb-220" firstAttribute="leading" secondItem="QJe-ep-B8E" secondAttribute="leading" id="OXQ-Lj-uOa"/>
+                                                <constraint firstItem="QJe-ep-B8E" firstAttribute="width" secondItem="jsd-Uw-gld" secondAttribute="width" id="YCD-0Z-FlJ"/>
+                                                <constraint firstAttribute="topMargin" secondItem="jsd-Uw-gld" secondAttribute="top" id="fad-Mx-7B8"/>
+                                                <constraint firstItem="ggc-yb-220" firstAttribute="top" secondItem="QJe-ep-B8E" secondAttribute="bottom" constant="8" symbolic="YES" id="hhy-6h-gWZ"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="jsd-Uw-gld" secondAttribute="leading" id="y3E-LQ-kCb"/>
+                                                <constraint firstItem="QJe-ep-B8E" firstAttribute="top" secondItem="jsd-Uw-gld" secondAttribute="bottom" constant="8" symbolic="YES" id="yN2-vd-YNF"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -98,10 +113,15 @@
                             <outlet property="delegate" destination="pBf-r4-PQg" id="EKX-dg-IIr"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="weatherCoordinateLabel" destination="ggc-yb-220" id="jpz-zk-dbz"/>
+                        <outlet property="weatherDescriptionLabel" destination="QJe-ep-B8E" id="94P-zG-Ly4"/>
+                        <outlet property="weatherMainLabel" destination="jsd-Uw-gld" id="Bie-MG-9Y0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMr-0b-UqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1935" y="137"/>
+            <point key="canvasLocation" x="1933.5999999999999" y="136.28185907046478"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M0c-w7-FBE">

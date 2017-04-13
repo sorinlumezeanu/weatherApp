@@ -29,10 +29,33 @@ class WeatherService {
             }
             
             if let data = data {
-                print(data)
+                let weather = self.parse(jsonWeatherData: data)
+                completion(weather)
             }
         }        
         requestTask.resume()
+    }
+    
+    private func parse(jsonWeatherData: Data) -> Weather? {
+        guard let jsonObject = try? JSONSerialization.jsonObject(with: jsonWeatherData) as? [String: Any] else { return nil }
+        guard let json = jsonObject else { return nil }
+        
+        guard let jsonCoordinates = json["coord"] as? [String: Any] else { return nil }
+        guard let latitude = jsonCoordinates["lat"] as? Double else { return nil }
+        guard let longitude = jsonCoordinates["lon"] as? Double else { return nil }
+        
+        guard let jsonWeather = json["weather"] as? [Any] else { return nil }
+        guard let id = (jsonWeather.first as? [String: Any])?["id"] as? Int else { return nil }
+        guard let main = (jsonWeather.first as? [String: Any])?["main"] as? String else { return nil }
+        guard let description = (jsonWeather.first as? [String: Any])?["description"] as? String else { return nil }
+        guard let icon = (jsonWeather.first as? [String: Any])?["icon"] as? String else { return nil }
+        
+        return Weather(latitude: latitude,
+                       longitude: longitude,
+                       id: id,
+                       main: main,
+                       description: description,
+                       icon: icon)
     }
     
     private func prepareRequestUrl(latitude: Double, longitude: Double) -> URL? {

@@ -17,18 +17,34 @@ class WeatherVC: UITableViewController {
 
     weak var datasource: WeatherVCDataSource?
     
+    @IBOutlet weak var weatherMainLabel: UILabel!
+    @IBOutlet weak var weatherDescriptionLabel: UILabel!
+    @IBOutlet weak var weatherCoordinateLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let datasource = datasource {
-            let title = "\(datasource.locationCoordinate)"
-            self.title = title
-            
-            let locationCoordinate = datasource.locationCoordinate!
-            let weatherService = WeatherService()
-            weatherService.fetchWeather(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude, completion: { (result) in
-                print("here")
-            })
+            if let locationCoordinate = datasource.locationCoordinate {
+                let weatherService = WeatherService()
+                weatherService.fetchWeather(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude) { (weather) in
+                    DispatchQueue.main.async {
+                        self.updateWeatherDetails(weather)
+                    }
+                }
+            }
+        }
+    }
+    
+    private func updateWeatherDetails(_ weather: Weather?) {
+        if let weather = weather {
+            self.weatherMainLabel.text = weather.main
+            self.weatherDescriptionLabel.text = weather.description
+            self.weatherCoordinateLabel.text = "\(weather.coordinate.dms.latitude), \(weather.coordinate.dms.longitude)"
+        } else {
+            self.weatherMainLabel.text = "n/a"
+            self.weatherDescriptionLabel.text = ""
+            self.weatherCoordinateLabel.text = ""
         }
     }
     
