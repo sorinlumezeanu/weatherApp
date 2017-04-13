@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FF0CC94D1E9EAE8E00D9CA18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CC94C1E9EAE8E00D9CA18 /* AppDelegate.swift */; };
 		FF0CC9521E9EAE8E00D9CA18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0CC9501E9EAE8E00D9CA18 /* Main.storyboard */; };
-		FF0CC9551E9EAE8E00D9CA18 /* WeatherApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF0CC9531E9EAE8E00D9CA18 /* WeatherApp.xcdatamodeld */; };
 		FF0CC9571E9EAE8E00D9CA18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF0CC9561E9EAE8E00D9CA18 /* Assets.xcassets */; };
 		FF0CC95A1E9EAE8E00D9CA18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0CC9581E9EAE8E00D9CA18 /* LaunchScreen.storyboard */; };
 		FF0CC9651E9EAE8F00D9CA18 /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CC9641E9EAE8F00D9CA18 /* WeatherAppTests.swift */; };
@@ -46,7 +45,6 @@
 		FF0CC9491E9EAE8E00D9CA18 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF0CC94C1E9EAE8E00D9CA18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF0CC9511E9EAE8E00D9CA18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FF0CC9541E9EAE8E00D9CA18 /* WeatherApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherApp.xcdatamodel; sourceTree = "<group>"; };
 		FF0CC9561E9EAE8E00D9CA18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF0CC9591E9EAE8E00D9CA18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF0CC95B1E9EAE8F00D9CA18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 				FF1E844A1E9F2625007DAFD0 /* Model */,
 				FF1E84471E9F2594007DAFD0 /* Services */,
 				FF7DB53B1E9EB217005827E9 /* UI */,
-				FF7DB53D1E9EB250005827E9 /* Model */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -231,14 +228,6 @@
 				FF0CC9561E9EAE8E00D9CA18 /* Assets.xcassets */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		FF7DB53D1E9EB250005827E9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				FF0CC9531E9EAE8E00D9CA18 /* WeatherApp.xcdatamodeld */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		FF7DB53E1E9EB287005827E9 /* Storyboards */ = {
@@ -396,7 +385,6 @@
 				FF1E84501E9F3ADD007DAFD0 /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				FF1E84491E9F25A7007DAFD0 /* WeatherService.swift in Sources */,
 				FF1E84521E9F42FA007DAFD0 /* LocationService.swift in Sources */,
-				FF0CC9551E9EAE8E00D9CA18 /* WeatherApp.xcdatamodeld in Sources */,
 				FF1E84441E9EC159007DAFD0 /* MapVC.swift in Sources */,
 				FF0CC94D1E9EAE8E00D9CA18 /* AppDelegate.swift in Sources */,
 				FF1E844C1E9F2644007DAFD0 /* Weather.swift in Sources */,
@@ -672,19 +660,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		FF0CC9531E9EAE8E00D9CA18 /* WeatherApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				FF0CC9541E9EAE8E00D9CA18 /* WeatherApp.xcdatamodel */,
-			);
-			currentVersion = FF0CC9541E9EAE8E00D9CA18 /* WeatherApp.xcdatamodel */;
-			path = WeatherApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = FF0CC9411E9EAE8E00D9CA18 /* Project object */;
 }
